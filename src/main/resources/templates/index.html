@@ -57,18 +57,19 @@
         <tr class="thead-dark">
             <td>Id</td>
             <td>Name</td>
-            <td>Actions</td>
+            <td>Description</td>
+            <td>Price</td>
         </tr>
         </thead>
 
-        <tr class="myTableRow responsive-row" th:each="student : ${studentsList}" th:attr="entryIndex=${student.id}">
-            <td th:text="${student.id}"/>
-            <td th:text="${student.name}"/>
-            <td>
-                <a class="btn btn-primary" th:href="@{'/students/courses/' + ${student.id}}" role="button">Courses Info</a>
-                <button class="btn btn-danger removeBtn" th:attr="entryIndex=${student.id}">Remove</button>
-            </td>
+        <tr class="myTableRow responsive-row" th:each="product : ${productList}" th:attr="entryIndex=${product.id}">
+            <td th:text="${product.id}"/>
+            <td th:text="${product.name}"/>
+            <td th:text="${product.description}"/>
+            <td th:text="${product.price}"/>
         </tr>
+
+
     </table>
 
 
