@@ -86,4 +86,21 @@ CREATE TABLE students_courses (
     ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB CHARSET=utf8;
 
+/* Task 02 */
+DROP TABLE IF EXISTS products;
+
+CREATE TABLE products (
+    id int(11) NOT NULL AUTO_INCREMENT,
+    name VARCHAR(200) DEFAULT NULL,
+    description VARCHAR(700) DEFAULT NULL,
+    price double DEFAULT NULL,
+    PRIMARY KEY(id)
+) ENGINE=InnoDB CHARSET=utf8;
+
+INSERT INTO products (name,description,price)
+VALUES
+('FENDER ERIC CLAPTON SIGNATURE STRATOCASTER MN BLACK (CUSTOM SHOP)','электрогитара в кейсе, цвет черный, корпус - ольха, гриф - клён, пофиль Soft `V`, накладка грифа - клён, радиус накладки 9,5`',412000.0)
+,('GIBSON 2019 LES PAUL MODERN GRAPHITE TOP','электрогитара, цвет черный, материал корпуса - махагони, верхняя часть - клён, гриф - махагони, накладка грифа - эбони',241000.00)
+,('IBANEZ AZ2402-BKF','электрогитара',138000.00);
+
 SET FOREIGN_KEY_CHECKS = 1;
