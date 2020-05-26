@@ -1,6 +1,8 @@
 package com.geekbrains.geekspring.controllers;
 
+import com.geekbrains.geekspring.entities.Product;
 import com.geekbrains.geekspring.entities.Student;
+import com.geekbrains.geekspring.services.ProductService;
 import com.geekbrains.geekspring.services.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,19 +13,18 @@ import java.util.List;
 
 @Controller
 public class MainController {
-    // https://getbootstrap.com/docs/4.1/getting-started/introduction/csrf
 
-    private StudentsService studentsService;
+    private ProductService productService;
 
     @Autowired
-    public void setStudentsService(StudentsService studentsService) {
-        this.studentsService = studentsService;
+    public void setProductService(ProductService productService) {
+        this.productService = productService;
     }
 
     @RequestMapping("/")
     public String showHomePage(Model model) {
-        List<Student> allStudents = studentsService.getAllStudentsList();
-        model.addAttribute("studentsList", allStudents);
+        List<Product> allProduct = productService.getAllProductList();
+        model.addAttribute("productList", allProduct);
         return "index";
     }
 }
